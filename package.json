@@ -2,12 +2,14 @@
   "name": "freegameassets",
   "version": "1.0.0",
   "description": "Free CC0 game assets repository with stealth AI developer engine",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "node dev-server.js"
   },
-  "keywords": ["game-assets", "unity3d", "3d-models"],
+  "keywords": [
+    "game-assets",
+    "unity3d",
+    "3d-models"
+  ],
   "author": "mr-mitro06",
   "license": "CC0-1.0"
 }
-
