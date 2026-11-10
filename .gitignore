@@ -1,0 +1,10 @@
+# Environment variables (Never commit real API keys to GitHub)
+.env
+.env.local
+.env.*.local
+
+# Dependencies & Build
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db

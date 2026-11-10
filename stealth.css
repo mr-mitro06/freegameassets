@@ -1,0 +1,321 @@
+/* Stealth Custom Styles & Animations */
+
+/* Logo pulse / bounce effect when clicked */
+@keyframes logoPulseSuccess {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08); filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.7)); }
+  60% { transform: scale(0.96); }
+  100% { transform: scale(1); filter: none; }
+}
+
+.logo-copied-bounce {
+  animation: logoPulseSuccess 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Premium Asset Store Search Bar --- */
+.asset-search-wrapper {
+  margin-top: 2rem;
+  max-width: 580px;
+  width: 100%;
+  position: relative;
+}
+
+.asset-search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 5px 6px 5px 18px;
+}
+
+.asset-search-container:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 24px -2px rgba(0, 0, 0, 0.09), 0 2px 8px -1px rgba(0, 0, 0, 0.04);
+}
+
+.asset-search-container:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 6px 24px -2px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.asset-search-icon-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  flex-shrink: 0;
+  margin-right: 12px;
+  transition: color 0.2s ease;
+}
+
+.asset-search-container:focus-within .asset-search-icon-left {
+  color: #2563eb;
+}
+
+.asset-search-field {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: #0f172a;
+  line-height: 1.5;
+  padding: 8px 0;
+}
+
+.asset-search-field::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.asset-search-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+.asset-search-submit-btn:hover {
+  background: #1e293b;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+}
+
+.asset-search-submit-btn:active {
+  transform: scale(0.95);
+}
+
+.asset-search-submit-btn.loading {
+  background: #2563eb;
+}
+
+.asset-search-submit-btn.loading svg {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Toast Notifications */
+.stealth-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stealth-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.stealth-toast.hide {
+  transform: translateY(-15px) scale(0.95);
+  opacity: 0;
+}
+
+.stealth-toast-success {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+.stealth-toast-success svg {
+  color: #10b981;
+}
+
+.stealth-toast-warning {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #fed7aa;
+}
+
+.stealth-toast-warning svg {
+  color: #f97316;
+}
+
+.stealth-toast-info {
+  background-color: #0f172a;
+  color: #f8fafc;
+  border-color: #1e293b;
+}
+
+.stealth-toast-info svg {
+  color: #38bdf8;
+}
+
+/* Easter Egg Modal Smooth Reveal */
+#easter-egg-modal:not(.hidden) {
+  opacity: 1;
+}
+
+/* Code viewer formatting */
+.code-preview-block {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: #0d1117;
+  color: #e6edf3;
+  border-radius: 10px;
+  padding: 16px;
+  max-height: 380px;
+  overflow-y: auto;
+  border: 1px solid #30363d;
+}
+
+/* Custom scrollbars */
+.code-preview-block::-webkit-scrollbar,
+#easter-egg-modal .overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.code-preview-block::-webkit-scrollbar-track,
+#easter-egg-modal .overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code-preview-block::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+#easter-egg-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 3px;
+}
+
+/* Heart upvote active state */
+.heart-active svg {
+  fill: #e11d48 !important;
+  color: #e11d48 !important;
+}
+
+.heart-active span {
+  color: #e11d48 !important;
+  font-weight: 600 !important;
+}
+
+
+/* --- Indicator States for Search Magnifying Circle --- */
+.asset-search-submit-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 1. Default Idle State: Pure Black */
+.asset-search-submit-btn.state-idle {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* 2. Searching State: Electric Blue Pulse */
+.asset-search-submit-btn.state-searching {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25), 0 4px 14px rgba(37, 99, 235, 0.45) !important;
+  animation: pulseBlue 1.2s infinite ease-in-out;
+}
+
+/* 3. Fallback / Auto-Switch State: Amber / Orange */
+.asset-search-submit-btn.state-fallback {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.3), 0 4px 14px rgba(234, 88, 12, 0.5) !important;
+  animation: pulseOrange 0.8s infinite ease-in-out;
+}
+
+/* 4. Found / Ready to Copy State: Emerald Green */
+.asset-search-submit-btn.state-found {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.28), 0 4px 16px rgba(16, 185, 129, 0.5) !important;
+}
+
+/* 5. Error / Not Found State: Crimson Red */
+.asset-search-submit-btn.state-error {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.25), 0 4px 12px rgba(239, 68, 68, 0.4) !important;
+}
+
+@keyframes pulseBlue {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.05); filter: brightness(1.15); }
+}
+
+@keyframes pulseOrange {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.07); filter: brightness(1.2); }
+}
+
+/* Micro Status Indicator Dot inside the search circle */
+.search-status-dot {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  border: 1.5px solid #ffffff;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+}
+
+.search-status-dot.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.search-status-dot.dot-searching {
+  background-color: #60a5fa;
+  box-shadow: 0 0 6px #3b82f6;
+}
+
+.search-status-dot.dot-fallback {
+  background-color: #fb923c;
+  box-shadow: 0 0 6px #ea580c;
+}
+
+.search-status-dot.dot-found {
+  background-color: #34d399;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.search-status-dot.dot-error {
+  background-color: #f87171;
+  box-shadow: 0 0 6px #ef4444;
+}
